@@ -1,0 +1,26 @@
+﻿@using Business;
+@{
+    ViewData["Title"] = "Pole Manager";
+}
+@model List<Pole>;
+
+<h1>Gestion des poles</h1>
+
+<h2>@ViewBag.Toto</h2>
+<h2>@ViewData["result"]</h2>
+
+<h3>@TempData["message"]</h3>
+
+<a href="/Pole/Add">Ajouter</a>
+<table>
+@foreach(var pole in Model){
+    <tr>
+        <td>@pole.Id</td>
+        <td>@pole.Name</td>
+        <td>
+            <a href="/pole/edit/@pole.Id">Modifier</a>
+            <a href="/">Supprimer</a>
+        </td>
+    </tr>
+}
+</table>

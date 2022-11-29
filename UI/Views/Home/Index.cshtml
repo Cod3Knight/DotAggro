@@ -1,0 +1,65 @@
+﻿@using Business
+@{
+    ViewData["Title"] = "Inscription Page";
+}
+@model Authentication;
+
+<div class="text-center">
+    <h1 class="display-4">Inscription Gestion Salariés</h1>
+    
+</div>
+
+<form method="/Home/Index" action="/auth">
+    @if (!string.IsNullOrEmpty((string)TempData["message"]))
+    {
+        <div class="col-12"><div class="alert alert-danger">@TempData["message"]</div></div>
+    }
+    @if (!string.IsNullOrEmpty((string)TempData["success"]))
+    {
+        <div class="col-12"><div class="alert alert-success">@TempData["success"]</div></div>
+    }
+
+    <div>
+        <br />
+        <label for="authFirstName">Votre Prenom *</label>
+        <input name="Password" type="password" placeholder="Votre prénom" id="authPassword">
+    </div>
+    <div>
+        <br />
+        <label for="authLastName">Votre Nom *</label>
+        <input name="Password" type="password" placeholder="Votre nom" id="authPassword">
+    </div>
+    <div>
+        <br />
+        <label for="authPhone">Votre Tel. Fixe *</label>
+        <input name="Password" type="password" placeholder="Tel. Fixe" id="authPassword">
+    </div>
+    <div>
+        <br />
+        <label for="authCellPhone">Votre Tel. Portable *</label>
+        <input name="Password" type="password" placeholder="Tel. Portable" id="authPassword">
+    </div>
+    <div>
+        <br />
+        <label for="authEmail">Votre Adresse Email *</label>
+        <input value="@Model.Email" name="Email" type="email" placeholder="E-mail" id="authEmail">
+    </div>
+    <div>
+        <br />
+        <label for="authService">Entrez votre Service *</label>
+        <input name="Password" type="password" placeholder="Votre Service" id="authPassword">
+    </div>
+    <div>
+        <br />
+        <label for="authSite">Entrez votre Pole *</label>
+        <input name="Password" type="password" placeholder="Votre Pole" id="authPassword">
+    </div>
+    <div>
+        <br />
+        <label for="authPassword"> Mot de passe *</label>
+        <input name="Password" type="password" placeholder="Mot de passe" id="authPassword">
+    </div>
+    
+    <br />
+    <button type="submit">Inscription</button>
+</form>

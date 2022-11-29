@@ -1,0 +1,14 @@
+﻿@using Business;
+@{
+    ViewData["Title"] = "Pole Manager";
+}
+@model Pole;
+
+<form method="post" action="/pole/add">
+    <label>Pole N° @Model.Id</label>
+
+    <input name="Id" value="@Model.Id" type="hidden"/>
+    <input name="Name" value="@Model.Name"/>
+
+    <input type="submit" value="Sauvegarder"/>
+</form>
